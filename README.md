@@ -204,7 +204,19 @@ If you use qfcore in your work, please cite the preprint and state the qfcore
 version:
 
 > K. Sorokin, A. Levin, M. Beketov, A. Ayzenberg. *A data structure for quotient
-> flag complexes.* Preprint.
+> flag complexes.* Preprint arXiv:2609.32733.
+
+https://arxiv.org/abs/2609.32733v1 
+
+> @misc{sorokin2026datastructurequotientflag,
+      title={A data structure for quotient flag complexes}, 
+      author={Konstantin Sorokin and Aleksandr Levin and Maxim Beketov and Anton Ayzenberg},
+      year={2026},
+      eprint={2609.32733},
+      archivePrefix={arXiv},
+      primaryClass={math.AT},
+      url={https://arxiv.org/abs/2609.32733}, 
+}
 
 ## License
 
