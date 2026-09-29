@@ -1,0 +1,76 @@
+include README.md CHANGELOG.md LICENSE THIRD_PARTY_NOTICES.md RELEASING.md
+include pyproject.toml setup.py _build_support.py MANIFEST.in
+recursive-include licenses *.txt
+recursive-include src/qfcore *.py *.hpp *.cpp *.sha256 py.typed
+recursive-include src/qfops *.py *.hpp *.cpp
+recursive-include src/qfnext *.py *.hpp *.cpp
+recursive-include tests *.py *.qft
+recursive-include docs *.md
+recursive-include examples *.py
+include tools/check_installation.py tools/build_provenance.py tools/check_distributions.py
+include ci/install_boost_headers.sh
+include vendor/GUDHI_LICENSE vendor/README.md vendor/CORE_HEADERS.txt
+include vendor/gudhi_include/gudhi/Debug_utils.h
+include vendor/gudhi_include/gudhi/Fields/Z2_field_operators.h
+include vendor/gudhi_include/gudhi/Fields/Zp_field_operators.h
+include vendor/gudhi_include/gudhi/Matrix.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/Base_matrix.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/Base_matrix_with_column_compression.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/Boundary_matrix.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/Chain_matrix.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/Id_to_index_overlay.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/Position_to_index_overlay.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/RU_matrix.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/allocators/entry_constructors.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/base_pairing.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/base_swap.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/chain_pairing.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/chain_rep_cycles.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/chain_vine_swap.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/chain_column_extra_properties.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/column_dimension_holder.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/column_utilities.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/entry_types.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/heap_column.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/intrusive_list_column.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/intrusive_set_column.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/list_column.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/naive_vector_column.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/row_access.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/set_column.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/unordered_set_column.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/columns/vector_column.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/index_mapper.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/matrix_dimension_holders.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/matrix_row_access.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/ru_pairing.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/ru_rep_cycles.h
+include vendor/gudhi_include/gudhi/Persistence_matrix/ru_vine_swap.h
+include vendor/gudhi_include/gudhi/Simple_object_pool.h
+include vendor/gudhi_include/gudhi/Simplex_tree.h
+include vendor/gudhi_include/gudhi/Simplex_tree/Simplex_tree_iterators.h
+include vendor/gudhi_include/gudhi/Simplex_tree/Simplex_tree_node_explicit_storage.h
+include vendor/gudhi_include/gudhi/Simplex_tree/Simplex_tree_siblings.h
+include vendor/gudhi_include/gudhi/Simplex_tree/Simplex_tree_star_simplex_iterators.h
+include vendor/gudhi_include/gudhi/Simplex_tree/filtration_value_utils.h
+include vendor/gudhi_include/gudhi/Simplex_tree/hooks_simplex_base.h
+include vendor/gudhi_include/gudhi/Simplex_tree/indexing_tag.h
+include vendor/gudhi_include/gudhi/Simplex_tree/serialization_utils.h
+include vendor/gudhi_include/gudhi/Simplex_tree/simplex_tree_options.h
+include vendor/gudhi_include/gudhi/filtered_zigzag_persistence.h
+include vendor/gudhi_include/gudhi/graph_simplicial_complex.h
+include vendor/gudhi_include/gudhi/persistence_interval.h
+include vendor/gudhi_include/gudhi/persistence_matrix_options.h
+include vendor/gudhi_include/gudhi/reader_utils.h
+include vendor/gudhi_include/gudhi/zigzag_persistence.h
+prune .github
+prune .git
+prune build
+prune dist
+prune wheelhouse
+prune runs
+prune results
+prune logs
+prune .pytest_cache
+prune .venv
+global-exclude __pycache__ *.pyc *.pyo *.so *.pyd .DS_Store

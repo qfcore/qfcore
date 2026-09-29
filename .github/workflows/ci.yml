@@ -1,0 +1,35 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    name: Python ${{ matrix.python }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - run: sudo apt-get update && sudo apt-get install -y libboost-dev
+      - name: Install and test the core package
+        run: |
+          python -m venv "$RUNNER_TEMP/core-env"
+          source "$RUNNER_TEMP/core-env/bin/activate"
+          python -m pip install --upgrade pip
+          python -m pip install ".[test]"
+          python tools/build_provenance.py --check
+          python tools/check_installation.py --core-only
+          python -m pytest -q

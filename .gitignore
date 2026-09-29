@@ -1,0 +1,26 @@
+# Python / native builds
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.o
+*.obj
+*.a
+*.egg-info/
+build/
+dist/
+wheelhouse/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+# Output of the examples
+examples/output/
+/*.qft
+/*.qfe
+# Editors and OS files
+.DS_Store
+.idea/
+.vscode/
+*~

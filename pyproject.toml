@@ -1,0 +1,89 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "pybind11>=2.13,<4"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qfcore"
+dynamic = ["version"]
+description = "QF-trees for quotient flag complexes: editable cell complexes, homology, cup products, fundamental groups and zigzag persistence"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT AND BSD-3-Clause AND BSL-1.0"
+license-files = ["LICENSE", "vendor/GUDHI_LICENSE", "licenses/*"]
+authors = [
+    { name = "Konstantin Sorokin" },
+    { name = "Aleksandr Levin" },
+    { name = "Maxim Beketov" },
+    { name = "Anton Ayzenberg" },
+]
+maintainers = [{ name = "Konstantin Sorokin", email = "ksorokin@hse.ru" }]
+keywords = [
+    "topological data analysis", "flag complex", "clique complex", "quotient complex",
+    "CW complex", "simplex tree", "homology", "cup product", "zigzag persistence", "GUDHI",
+    "orbit space", "group action",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = ["numpy>=1.23"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+
+[project.urls]
+Homepage = "https://github.com/qfcore/qfcore"
+Source = "https://github.com/qfcore/qfcore"
+Issues = "https://github.com/qfcore/qfcore/issues"
+Changelog = "https://github.com/qfcore/qfcore/blob/main/CHANGELOG.md"
+Documentation = "https://github.com/qfcore/qfcore/tree/main/docs"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["qfcore", "qfops", "qfnext"]
+namespaces = false
+
+[tool.setuptools.dynamic]
+version = {attr = "qfcore._version.__version__"}
+
+[tool.setuptools.package-data]
+qfcore = ["py.typed", "_build_inputs.sha256"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers --strict-config"
+
+[tool.cibuildwheel]
+build = ["cp310-*", "cp311-*", "cp312-*", "cp313-*", "cp314-*"]
+skip = ["*-musllinux_*", "*_i686"]
+test-requires = ["pytest>=7"]
+test-command = [
+    "python {project}/tools/check_installation.py --core-only",
+    "python -m pytest -q -p no:cacheprovider {project}/tests",
+]
+
+[tool.cibuildwheel.linux]
+before-all = "bash {project}/ci/install_boost_headers.sh /opt/boost-headers"
+environment = { BOOST_INCLUDE = "/opt/boost-headers" }
+
+[tool.cibuildwheel.macos]
+archs = ["native"]
+before-all = "bash {project}/ci/install_boost_headers.sh $HOME/boost-headers"
+environment = { BOOST_INCLUDE = "$HOME/boost-headers", MACOSX_DEPLOYMENT_TARGET = "10.15" }
