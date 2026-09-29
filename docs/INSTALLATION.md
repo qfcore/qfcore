@@ -57,5 +57,5 @@ were built for.
 
 A wheel built locally with `python -m build --wheel` on Linux is tagged
 `linux_x86_64` (or similar). It works on the machine that built it but is not a
-portable manylinux wheel. Wheels for PyPI are built and repaired by the release
-workflow with cibuildwheel; see `RELEASING.md`.
+portable manylinux wheel. Wheels for PyPI are built and repaired with
+cibuildwheel by the release workflow, `.github/workflows/release.yml`.

@@ -16,7 +16,6 @@ Before opening a pull request:
 
 - Do not commit compiled extensions, build outputs or files written by the
   examples.
-- Add an entry to `CHANGELOG.md` for user-visible changes.
 - If you changed native or Python sources, the build configuration or the
   vendored headers, run `python tools/build_provenance.py` and commit the
   updated `src/qfcore/_build_inputs.sha256`.

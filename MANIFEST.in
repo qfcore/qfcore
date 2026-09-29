@@ -1,4 +1,4 @@
-include README.md CHANGELOG.md LICENSE THIRD_PARTY_NOTICES.md RELEASING.md
+include README.md LICENSE THIRD_PARTY_NOTICES.md
 include pyproject.toml setup.py _build_support.py MANIFEST.in
 recursive-include licenses *.txt
 recursive-include src/qfcore *.py *.hpp *.cpp *.sha256 py.typed

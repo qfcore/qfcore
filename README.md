@@ -13,9 +13,9 @@ example, the torus and the wedge S¹ ∨ S¹ ∨ S², each built from one vertex
 loops and one disc, have the same cellular chain complex; qfcore tells them apart
 by the cup product and by π₁ (see `examples/cup_pi1_and_zigzag.py`).
 
-The mathematics is described in the preprint [*A data structure for quotient
-flag complexes*](https://arxiv.org/abs/2609.32733) by Konstantin Sorokin, Aleksandr Levin, Maxim Beketov and Anton
-Ayzenberg. 
+The mathematics is described in the preprint
+[*A data structure for quotient flag complexes*](https://arxiv.org/abs/2609.32733)
+by Konstantin Sorokin, Aleksandr Levin, Maxim Beketov and Anton Ayzenberg.
 
 ## Installation
 
@@ -196,7 +196,6 @@ python -m pytest -q
 ```
 
 See [CONTRIBUTING.md](https://github.com/qfcore/qfcore/blob/main/CONTRIBUTING.md).
-Release steps are in [RELEASING.md](https://github.com/qfcore/qfcore/blob/main/RELEASING.md).
 
 ## Citation
 
@@ -204,19 +203,20 @@ If you use qfcore in your work, please cite the preprint and state the qfcore
 version:
 
 > K. Sorokin, A. Levin, M. Beketov, A. Ayzenberg. *A data structure for quotient
-> flag complexes.* Preprint arXiv:2609.32733.
+> flag complexes.* Preprint,
+> [arXiv:2609.32733](https://arxiv.org/abs/2609.32733), 2026.
 
-https://arxiv.org/abs/2609.32733v1 
-
-> @misc{sorokin2026datastructurequotientflag,
-      title={A data structure for quotient flag complexes}, 
-      author={Konstantin Sorokin and Aleksandr Levin and Maxim Beketov and Anton Ayzenberg},
-      year={2026},
-      eprint={2609.32733},
-      archivePrefix={arXiv},
-      primaryClass={math.AT},
-      url={https://arxiv.org/abs/2609.32733}, 
+```bibtex
+@misc{sorokin2026datastructurequotientflag,
+  title         = {A data structure for quotient flag complexes},
+  author        = {Konstantin Sorokin and Aleksandr Levin and Maxim Beketov and Anton Ayzenberg},
+  year          = {2026},
+  eprint        = {2609.32733},
+  archivePrefix = {arXiv},
+  primaryClass  = {math.AT},
+  url           = {https://arxiv.org/abs/2609.32733}
 }
+```
 
 ## License
 

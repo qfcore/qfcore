@@ -48,7 +48,6 @@ test = ["pytest>=7"]
 Homepage = "https://github.com/qfcore/qfcore"
 Source = "https://github.com/qfcore/qfcore"
 Issues = "https://github.com/qfcore/qfcore/issues"
-Changelog = "https://github.com/qfcore/qfcore/blob/main/CHANGELOG.md"
 Documentation = "https://github.com/qfcore/qfcore/tree/main/docs"
 
 [tool.setuptools]
